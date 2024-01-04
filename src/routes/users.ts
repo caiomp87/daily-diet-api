@@ -40,8 +40,4 @@ export async function userRoutes(app: FastifyInstance) {
 
     return reply.status(201).send()
   })
-
-  app.get('/', async (request, reply) => {
-    return reply.status(200).send()
-  })
 }
