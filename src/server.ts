@@ -1,23 +1,9 @@
-import { fastify } from 'fastify'
-import cookie from '@fastify/cookie'
-import { userRoutes } from './routes/users'
-import { mealsRoute } from './routes/meals'
-
-const app = fastify()
-
-app.register(cookie)
-
-app.register(userRoutes, {
-  prefix: 'users',
-})
-
-app.register(mealsRoute, {
-  prefix: 'meals',
-})
+import { app } from './app'
+import { env } from './env'
 
 app
   .listen({
-    port: 3333,
+    port: env.PORT,
   })
   .then(() => {
     console.log('server is running')
